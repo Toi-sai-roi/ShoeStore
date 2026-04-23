@@ -1,0 +1,146 @@
+﻿@model List<ShoeStore.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Thanh toán";
+}
+
+<style>
+    .payment-option {
+        border: 2px solid #eee;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+
+        .payment-option:hover {
+            border-color: #007bff;
+            background-color: #f8fbff;
+        }
+
+    .form-check-input:checked + .payment-option {
+        border-color: #007bff;
+        background-color: #f0f7ff;
+    }
+
+    .payment-logo {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin-right: 15px;
+    }
+
+    .payment-text {
+        font-weight: 600;
+        flex-grow: 1;
+    }
+</style>
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center text-uppercase fw-bold">🛒 Xác nhận đơn hàng</h2>
+
+    <div class="row">
+        <div class="col-md-7">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h5 class="mb-3 fw-bold"><i class="bi bi-person-fill"></i> Thông tin giao hàng</h5>
+                    <form asp-action="Checkout" asp-controller="Order" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Họ tên *</label>
+                            <input type="text" name="customerName" class="form-control" required value="@ViewBag.FullName" placeholder="Nguyễn Văn A" />
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Số điện thoại</label>
+                                <input type="text" name="customerPhone" class="form-control" value="@ViewBag.Phone" placeholder="090..." />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Địa chỉ</label>
+                                <input type="text" name="customerAddress" class="form-control" value="@ViewBag.Address" placeholder="Số nhà, tên đường..." />
+                            </div>
+                        </div>
+
+                        <h5 class="mt-4 mb-3 fw-bold"><i class="bi bi-credit-card-fill"></i> Chọn phương thức thanh toán</h5>
+                        
+                        <div class="payment-methods">
+                            <label class="d-block">
+                                <input class="form-check-input d-none" type="radio" name="paymentMethod" value="COD" checked />
+                                <div class="payment-option">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/6491/6491490.png" class="payment-logo" alt="COD">
+                                    <span class="payment-text">Thanh toán khi nhận hàng (COD)</span>
+                                </div>
+                            </label>
+
+                            <label class="d-block">
+                                <input class="form-check-input d-none" type="radio" name="paymentMethod" value="MoMo" />
+                                <div class="payment-option">
+                                    <img src="/images/payment/momo.png" class="payment-logo" alt="MoMo">
+                                    <span class="payment-text">Ví điện tử MoMo</span>
+                                </div>
+                            </label>
+
+                            <label class="d-block">
+                                <input class="form-check-input d-none" type="radio" name="paymentMethod" value="VNPay" />
+                                <div class="payment-option">
+                                    <img src="/images/payment/vnpay.png" class="payment-logo" alt="VNPay">
+                                    <span class="payment-text">Cổng thanh toán VNPay</span>
+                                </div>
+                            </label>
+
+                            <label class="d-block">
+                                <input class="form-check-input d-none" type="radio" name="paymentMethod" value="ZaloPay" />
+                                <div class="payment-option">
+                                    <img src="/images/payment/zalopay.png" class="payment-logo" alt="ZaloPay">
+                                    <span class="payment-text">Ví điện tử ZaloPay</span>
+                                </div>
+                            </label>
+
+
+                            <label class="d-block">
+                                <input class="form-check-input d-none" type="radio" name="paymentMethod" value="PayPal" />
+                                <div class="payment-option">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="payment-logo" alt="PayPal">
+                                    <span class="payment-text">Thanh toán quốc tế PayPal</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100 mt-4 shadow-sm fw-bold">🚀 XÁC NHẬN ĐẶT HÀNG</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card shadow-sm border-0 bg-light">
+                <div class="card-body p-4">
+                    <h5 class="mb-3 fw-bold">Chi tiết giỏ hàng</h5>
+                    <div class="table-responsive">
+                        <table class="table table-borderless">
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="border-bottom">
+                                        <td>
+                                            <span class="fw-bold">@item.ProductName</span><br />
+                                            <small class="text-muted">Size: @item.Size | Màu: @item.Color</small>
+                                        </td>
+                                        <td class="text-center">x@(item.Quantity)</td>
+                                        <td class="text-end fw-bold">@item.SubTotal.ToString("N0") đ</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <span class="h5">Tổng cộng:</span>
+                        <span class="h4 text-danger fw-bold">@Model.Sum(i => i.SubTotal).ToString("N0") đ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

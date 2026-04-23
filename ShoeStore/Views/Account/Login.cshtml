@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Đăng nhập";
+}
+
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card shadow-sm p-4" style="width:400px">
+        <h4 class="text-center mb-4">Đăng nhập</h4>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">@ViewBag.Error</div>
+        }
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" placeholder="yourname@gmail.com" class=" form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Mật khẩu</label>
+                <input type="password" name="password" placeholder="yourpassword" class=" form-control" required />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+            <p class="text-center mt-3 small">Chưa có tài khoản? <a href="/Account/Register">Đăng ký</a></p>
+        </form>
+    </div>
+</div>

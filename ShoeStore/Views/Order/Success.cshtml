@@ -1,0 +1,35 @@
+﻿@model ShoeStore.Models.Order
+
+@{
+    ViewData["Title"] = "Đặt hàng thành công";
+}
+
+<div class="d-flex justify-content-center mt-5">
+    <div class="card shadow-sm text-center" style="max-width:480px; width:100%;">
+        <div class="card-body p-5">
+            <div style="font-size:3rem;">🎉</div>
+            <h3 class="fw-bold text-success mt-2 mb-1">Đặt hàng thành công!</h3>
+            <p class="text-muted mb-4">Cảm ơn <strong>@Model.CustomerName</strong> đã mua hàng.</p>
+
+            <div class="border rounded p-3 mb-4 text-start">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Mã đơn hàng</span>
+                    <strong>#@Model.Id</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Tổng tiền</span>
+                    <strong class="text-danger">@Model.TotalAmount.ToString("N0") đ</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span class="text-muted">Trạng thái</span>
+                    <span class="badge bg-warning text-dark">@Model.Status</span>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2 justify-content-center">
+                <a href="/Order/History" class="btn btn-outline-secondary">Xem đơn hàng</a>
+                <a href="/" class="btn btn-primary">Tiếp tục mua sắm</a>
+            </div>
+        </div>
+    </div>
+</div>

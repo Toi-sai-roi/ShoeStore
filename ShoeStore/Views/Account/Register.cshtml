@@ -1,0 +1,71 @@
+﻿<form method="post" novalidate>
+    <div class="mb-3">
+        <label class="form-label">Họ tên</label>
+        <input type="text" name="fullname" placeholder="Nguyễn Văn A" class="form-control" required />
+        <div class="invalid-feedback d-block" id="fullname-error"></div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" placeholder="yourname@gmail.com" class="form-control" required />
+        <div class="invalid-feedback d-block" id="email-error"></div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Mật khẩu</label>
+        <input type="password" name="password" placeholder="yourpassword" class="form-control" required minlength="6" />
+        <div class="invalid-feedback d-block" id="password-error"></div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Số điện thoại</label>
+        <input type="text" name="phone" placeholder="09xxxxxxxx" class="form-control"
+               inputmode="numeric" pattern="^(0[35789])[0-9]{8}$"
+               oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+        <div class="invalid-feedback d-block" id="phone-error"></div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Địa chỉ</label>
+        <input type="text" name="address" placeholder="e.g Hà Nội" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
+    <p class="text-center mt-3 small">Đã có tài khoản? <a href="/Account/Login">Đăng nhập</a></p>
+</form>
+
+<script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+        let valid = true;
+
+        const fullname = document.querySelector("[name=fullname]");
+        const email = document.querySelector("[name=email]");
+        const password = document.querySelector("[name=password]");
+        const phone = document.querySelector("[name=phone]");
+
+        document.querySelectorAll(".invalid-feedback").forEach(el => el.textContent = "");
+        document.querySelectorAll(".form-control").forEach(el => el.classList.remove("is-invalid"));
+
+        if (!fullname.value.trim()) {
+            fullname.classList.add("is-invalid");
+            document.getElementById("fullname-error").textContent = "Vui lòng nhập họ tên.";
+            valid = false;
+        }
+
+        if (!email.value.trim()) {
+            email.classList.add("is-invalid");
+            document.getElementById("email-error").textContent = "Vui lòng nhập email.";
+            valid = false;
+        }
+
+        if (password.value.length < 6) {
+            password.classList.add("is-invalid");
+            document.getElementById("password-error").textContent = "Mật khẩu tối thiểu 6 ký tự.";
+            valid = false;
+        }
+
+        const phonePattern = /^(0[35789])[0-9]{8}$/;
+        if (phone.value && !phonePattern.test(phone.value)) {
+            phone.classList.add("is-invalid");
+            document.getElementById("phone-error").textContent = "Số điện thoại không hợp lệ (VD: 0912345678).";
+            valid = false;
+        }
+
+        if (!valid) e.preventDefault();
+    });
+</script>

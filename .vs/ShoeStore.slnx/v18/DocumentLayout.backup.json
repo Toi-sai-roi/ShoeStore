@@ -1,0 +1,752 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\letun\\source\\repos\\ShoeStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\order\\revenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\order\\revenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\order\\adminindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\order\\adminindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\letun\\source\\repos\\ShoeStore\\tests\\example.spec.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tests\\example.spec.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\letun\\source\\repos\\ShoeStore\\tests\\newFile.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tests\\newFile.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\order\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\order\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\paymentsimulation\\process.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\paymentsimulation\\process.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\products\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\products\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\order\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\order\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\order\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\order\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\order\\fail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\order\\fail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\variant\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\variant\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\variant\\view.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\variant\\view.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\variant\\manage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\variant\\manage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\controllers\\variantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\controllers\\variantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\controllers\\paymentsimulationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\controllers\\paymentsimulationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|c:\\users\\letun\\source\\repos\\shoestore\\shoestore\\shoestore.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6E5E8459-E4B9-2D14-B77F-96FA499B1FAC}|ShoeStore\\ShoeStore.csproj|solutionrelative:shoestore\\shoestore.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "ShoeStore\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAswBQAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T15:30:46.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Models\\Review.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\Review.cs",
+              "RelativeToolTip": "ShoeStore\\Models\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T05:19:43.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Revenue.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Order\\Revenue.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Order\\Revenue.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Order\\Revenue.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Order\\Revenue.cshtml",
+              "ViewState": "AgIAABcAAAAAAAAAAADwvzUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-19T07:12:50.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "ShoeStore\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwCMAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T02:51:06.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminIndex.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Order\\AdminIndex.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Order\\AdminIndex.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Order\\AdminIndex.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Order\\AdminIndex.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-17T18:45:58.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Users.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Admin\\Users.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Admin\\Users.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Admin\\Users.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Admin\\Users.cshtml",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAmwIgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-15T12:53:43.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\CartController.cs",
+              "RelativeToolTip": "ShoeStore\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAAFgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T03:39:08.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\Order.cs",
+              "RelativeToolTip": "ShoeStore\\Models\\Order.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA9wBsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T13:56:01.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-10T14:07:36.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\User.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\User.cs",
+              "RelativeToolTip": "ShoeStore\\Models\\User.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T19:05:45.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderDetail.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\OrderDetail.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Models\\OrderDetail.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\OrderDetail.cs",
+              "RelativeToolTip": "ShoeStore\\Models\\OrderDetail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T13:56:13.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "example.spec.js",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\tests\\example.spec.js",
+              "RelativeDocumentMoniker": "tests\\example.spec.js",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\tests\\example.spec.js",
+              "RelativeToolTip": "tests\\example.spec.js",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-22T16:21:25.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Order\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Order\\Checkout.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Order\\Checkout.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Order\\Checkout.cshtml",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAAAHcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-16T03:24:44.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwEYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-12T12:06:32.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "ShoeStore\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "ShoeStore\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAABAAAAAAAAAAAAAuwCIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-04-19T03:10:49.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Data\\SeedData.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Data\\SeedData.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Data\\SeedData.cs",
+              "RelativeToolTip": "ShoeStore\\Data\\SeedData.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAwwFgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T14:25:25.149Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Process.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\PaymentSimulation\\Process.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\PaymentSimulation\\Process.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\PaymentSimulation\\Process.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\PaymentSimulation\\Process.cshtml",
+              "ViewState": "AgIAANoAAAAAAAAAAAAEwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-17T17:55:57.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Program.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Program.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Program.cs",
+              "RelativeToolTip": "ShoeStore\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T15:46:41.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "newFile.js",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\tests\\newFile.js",
+              "RelativeDocumentMoniker": "tests\\newFile.js",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\tests\\newFile.js",
+              "RelativeToolTip": "tests\\newFile.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-22T16:36:09.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\appsettings.json",
+              "RelativeDocumentMoniker": "ShoeStore\\appsettings.json",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\appsettings.json",
+              "RelativeToolTip": "ShoeStore\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-10T13:09:03.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-15T13:08:47.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Account\\Profile.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Account\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Account\\Profile.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Account\\Profile.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAUwBsAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-20T07:36:59.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ShoeStore\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwEoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T07:56:43.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-16T01:27:04.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "ShoeStore\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T07:36:06.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-20T07:32:06.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Products\\Create.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Products\\Create.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Products\\Create.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Products\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-16T01:25:06.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Products\\Index.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Products\\Index.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-15T13:02:08.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Products\\Delete.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Products\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Products\\Delete.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Products\\Delete.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAAAQwCwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-18T05:07:26.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "History.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Order\\History.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Order\\History.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Order\\History.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Order\\History.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAADcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-19T08:29:27.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Products\\Edit.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Products\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Products\\Edit.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Products\\Edit.cshtml",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAEwHMAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-10T14:28:54.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Success.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Order\\Success.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Order\\Success.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Order\\Success.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Order\\Success.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-10T14:10:37.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Fail.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Order\\Fail.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Order\\Fail.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Order\\Fail.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Order\\Fail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwAQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-10T14:10:51.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "ShoeStore\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAmwDQAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T02:48:26.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\Category.cs",
+              "RelativeToolTip": "ShoeStore\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T03:01:55.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Variant\\Edit.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Variant\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Variant\\Edit.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Variant\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-10T14:45:03.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\CartItem.cs",
+              "RelativeToolTip": "ShoeStore\\Models\\CartItem.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAywBkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T14:04:32.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\Product.cs",
+              "RelativeToolTip": "ShoeStore\\Models\\Product.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAiwBkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T12:50:15.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "View.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Variant\\View.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Variant\\View.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Variant\\View.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Variant\\View.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAgwBcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-10T14:44:38.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Manage.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Variant\\Manage.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Variant\\Manage.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Variant\\Manage.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Variant\\Manage.cshtml",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAgwIoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-10T14:44:12.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "VariantController.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\VariantController.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Controllers\\VariantController.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\VariantController.cs",
+              "RelativeToolTip": "ShoeStore\\Controllers\\VariantController.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAYwFQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T14:43:21.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Home\\Details.cshtml",
+              "RelativeDocumentMoniker": "ShoeStore\\Views\\Home\\Details.cshtml",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Views\\Home\\Details.cshtml",
+              "RelativeToolTip": "ShoeStore\\Views\\Home\\Details.cshtml",
+              "ViewState": "AgIAACsAAAAAAAAAAAApwDcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-10T14:20:05.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "ShoeStore\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T05:18:40.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "PaymentSimulationController.cs",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\PaymentSimulationController.cs",
+              "RelativeDocumentMoniker": "ShoeStore\\Controllers\\PaymentSimulationController.cs",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\Controllers\\PaymentSimulationController.cs",
+              "RelativeToolTip": "ShoeStore\\Controllers\\PaymentSimulationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T17:51:35.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "ShoeStore.csproj",
+              "DocumentMoniker": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\ShoeStore.csproj",
+              "RelativeDocumentMoniker": "ShoeStore\\ShoeStore.csproj",
+              "ToolTip": "C:\\Users\\letun\\source\\repos\\ShoeStore\\ShoeStore\\ShoeStore.csproj",
+              "RelativeToolTip": "ShoeStore\\ShoeStore.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-12T09:53:50.553Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

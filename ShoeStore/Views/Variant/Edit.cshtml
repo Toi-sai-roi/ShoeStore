@@ -1,0 +1,78 @@
+﻿@model ShoeStore.Models.ProductVariant
+
+@{
+    ViewData["Title"] = "Sửa biến thể";
+}
+
+<div class="container mt-4" style="max-width:520px;">
+
+    <div class="d-flex align-items-center gap-3 mb-4">
+        <a href="/Variant/Manage?productId=@Model.ProductId" class="btn btn-outline-secondary btn-sm">
+            ← Quay lại
+        </a>
+        <div>
+            <h4 class="mb-0 fw-semibold">Sửa biến thể</h4>
+            <small class="text-muted">Size @Model.Size — @Model.Color</small>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-4">
+            <form asp-action="Edit" asp-controller="Variant" method="post">
+                <div asp-validation-summary="All" class="alert alert-danger" style="display:none"
+                     id="valSummary"></div>
+
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="ProductId" />
+
+                <div class="mb-3">
+                    <label asp-for="Size" class="form-label fw-semibold">
+                        Size <span class="text-danger">*</span>
+                    </label>
+                    <input asp-for="Size" class="form-control"
+                           placeholder="VD: 39, 40, 41, 42..." required />
+                    <span asp-validation-for="Size" class="text-danger small"></span>
+                    <div class="form-text">Nhập số size giày (EU).</div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Color" class="form-label fw-semibold">
+                        Màu sắc <span class="text-danger">*</span>
+                    </label>
+                    <input asp-for="Color" class="form-control"
+                           placeholder="VD: Đen, Trắng, Đỏ..." required />
+                    <span asp-validation-for="Color" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Stock" class="form-label fw-semibold">
+                        Số lượng tồn kho <span class="text-danger">*</span>
+                    </label>
+                    <input asp-for="Stock" type="number" class="form-control"
+                           min="0" max="9999" required />
+                    <span asp-validation-for="Stock" class="text-danger small"></span>
+                    @if (Model.Stock == 0)
+                    {
+                        <div class="form-text text-danger">⚠ Biến thể này đang hết hàng.</div>
+                    }
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary px-4">Lưu thay đổi</button>
+                    <a href="/Variant/Manage?productId=@Model.ProductId"
+                       class="btn btn-outline-secondary">Hủy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        const summary = document.getElementById('valSummary');
+        if (summary && summary.querySelector('li')) summary.style.display = 'block';
+    </script>
+}

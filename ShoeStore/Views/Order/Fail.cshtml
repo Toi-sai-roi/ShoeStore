@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Đặt hàng thất bại";
+}
+
+<div class="d-flex justify-content-center mt-5">
+    <div class="card shadow-sm text-center border-danger" style="max-width:480px; width:100%;">
+        <div class="card-body p-5">
+            <div style="font-size:3rem;">❌</div>
+            <h3 class="fw-bold text-danger mt-2 mb-1">Đặt hàng thất bại!</h3>
+            <p class="text-muted mb-4">Đã có lỗi xảy ra trong quá trình xử lý đơn hàng.</p>
+
+            <div class="alert alert-warning py-2 small mb-4">
+                Vui lòng thử lại hoặc liên hệ hỗ trợ nếu vấn đề tiếp tục xảy ra.
+            </div>
+
+            <div class="d-flex gap-2 justify-content-center">
+                <a href="/Cart" class="btn btn-outline-warning">← Quay lại giỏ hàng</a>
+                <a href="/" class="btn btn-primary">← Về trang chủ</a>
+            </div>
+        </div>
+    </div>
+</div>

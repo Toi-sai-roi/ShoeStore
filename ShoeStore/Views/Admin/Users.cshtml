@@ -1,0 +1,137 @@
+﻿@model List<ShoeStore.Models.User>
+@using Microsoft.AspNetCore.Http
+
+@{
+    ViewData["Title"] = "Quản lý người dùng";
+
+    var currentEmail = Context.Session.GetString("UserEmail");
+    var rootEmail = "admin@shop.com";
+    var activeUsers = Model.Where(u => !u.IsDeleted).ToList();
+    var deletedUsers = Model.Where(u => u.IsDeleted).ToList();
+}
+
+<div class="container mt-4">
+    <h2>Quản lý người dùng</h2>
+    <p class="text-muted">Đang đăng nhập: <b>@currentEmail</b></p>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    <h4>Danh sách người dùng</h4>
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark text-black">
+            <tr>
+                <th>#</th>
+                <th>Họ tên</th>
+                <th>Email</th>
+                <th>SĐT</th>
+                <th>Role hiện tại</th>
+                <th>Đổi Role</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var user in activeUsers
+                .OrderByDescending(u => u.Email == currentEmail)
+                .ThenByDescending(u => u.Email == rootEmail))
+            {
+                <tr class="@(user.Email == currentEmail ? "table-success" : "")">
+                    <td>@user.Id</td>
+                    <td>@user.FullName</td>
+                    <td>@user.Email</td>
+                    <td>@user.Phone</td>
+
+                    <td>
+                        <span class="badge @(user.Role == "Admin" ? "bg-danger" : user.Role == "Staff" ? "bg-secondary" : "bg-primary")">
+                            @(user.Email == rootEmail ? "ROOT ADMIN" : user.Role)
+                        </span>
+                    </td>
+
+                    <td>
+                        @if (currentEmail == rootEmail)
+                        {
+                            if (user.Email != rootEmail)
+                            {
+                                <form asp-action="ChangeRole" asp-controller="Admin" method="post" class="d-flex gap-2">
+                                    <input type="hidden" name="userId" value="@user.Id" />
+
+                                    <select name="newRole" class="form-select form-select-sm" style="width:130px">
+                                        <option value="Customer" selected="@(user.Role == "Customer")">Customer</option>
+                                        <option value="Staff" selected="@(user.Role == "Staff")">Staff</option>
+                                        <option value="Admin" selected="@(user.Role == "Admin")">Admin</option>
+                                    </select>
+
+                                    <button type="submit" class="btn btn-sm btn-outline-primary">Lưu</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Cấm sửa chính mình</span>
+                            }
+                        }
+                        else
+                        {
+                            <span class="text-muted small">Chỉ Root Admin</span>
+                        }
+                    </td>
+
+                    <td>
+                        @if (currentEmail == rootEmail && user.Email != rootEmail)
+                        {
+                            <form asp-action="SoftDeleteUser" asp-controller="Admin" method="post" style="display:inline;">
+                                <input type="hidden" name="userId" value="@user.Id" />
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Chắc chắn xóa?')">
+                                    🗑️ Xóa
+                                </button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- THÙNG RÁC -->
+    @if (deletedUsers.Any())
+    {
+        <details>
+            <summary>🗑️ Thùng rác</summary>
+            <table class="table table-bordered table-hover table-secondary">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Họ tên</th>
+                        <th>Email</th>
+                        <th>Xóa lúc</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var user in deletedUsers)
+                    {
+                        <tr>
+                            <td>@user.Id</td>
+                            <td>@user.FullName</td>
+                            <td>@user.Email</td>
+                            <td>@user.DeletedAt?.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>
+                                <form asp-action="RestoreUser" asp-controller="Admin" method="post" style="display:inline;">
+                                    <input type="hidden" name="userId" value="@user.Id" />
+                                    <button type="submit" class="btn btn-sm btn-warning">↩️ Khôi phục</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </details>
+    }
+</div>

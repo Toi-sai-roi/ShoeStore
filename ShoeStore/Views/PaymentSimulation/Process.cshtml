@@ -1,0 +1,247 @@
+﻿@model ShoeStore.Models.Order
+@{
+    Layout = null;
+    var method = ViewBag.Method as string;
+    var usdAmount = Math.Round(Model.TotalAmount / 25000, 2);
+    
+    // Cấu hình màu sắc theo thương hiệu
+    var brandColor = "#ae2070"; // MoMo
+    if(method == "ZaloPay") brandColor = "#0081cf"; 
+    if(method == "VNPay") brandColor = "#005baa";
+    if(method == "PayPal") brandColor = "#003087";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cổng thanh toán trực tuyến - @method</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .progress-bar { transition: width 0.5s linear; }
+        .bg-brand { background-color: @brandColor; }
+        .text-brand { color: @brandColor; }
+        .border-brand { border-color: @brandColor; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <form id="confirmForm" asp-action="ConfirmPayment" method="post" class="hidden">
+        <input type="hidden" name="orderId" value="@Model.Id" />
+    </form>
+
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-white border-b p-4 shadow-sm">
+            <div class="max-w-5xl mx-auto flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <div class="font-black text-2xl tracking-tighter text-gray-800">SHOE<span class="text-brand">STORE</span></div>
+                    <div class="h-6 w-[1px] bg-gray-300"></div>
+                    <span class="font-bold text-gray-500 uppercase text-sm">Checkout Gateway</span>
+                </div>
+                <div class="text-right">
+                    <p class="text-[10px] text-gray-400 font-bold uppercase">Giao dịch hết hạn sau</p>
+                    <p class="text-red-600 font-mono font-bold" id="timer">14:59</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 max-w-5xl mx-auto w-full py-8 px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <div class="lg:col-span-2 space-y-6">
+                    
+                    @if (method == "VNPay" || method == "PayPal") {
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                            <div class="bg-gray-50 p-4 border-b flex justify-between items-center">
+                                <h3 class="font-bold text-gray-700">Chi tiết phương thức: @method</h3>
+                                <img src="@(method == "VNPay" 
+                                    ? "/images/payment/vnpay.png" 
+                                    : "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg")" 
+                                    class="h-6" alt="@method logo">
+                            </div>
+
+                            <div class="p-8" id="main-content">
+                                @if (method == "VNPay") {
+                                    <div id="vnpay-step-1" class="space-y-6">
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div class="col-span-2">
+                                                <label class="block text-xs font-bold text-gray-400 mb-2 uppercase">Ngân hàng thanh toán</label>
+                                                <select class="w-full p-3 border-2 border-gray-100 rounded-lg outline-none focus:border-brand font-bold">
+                                                    <option>NCB - Ngan hang Quoc Dan (Sandbox)</option>
+                                                    <option>Agribank</option>
+                                                    <option>Vietcombank</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-span-2">
+                                                <label class="block text-xs font-bold text-gray-400 mb-2 uppercase">Số thẻ / Số tài khoản</label>
+                                                <input type="text" value="9704198820211234" class="w-full p-3 border-2 border-gray-100 rounded-lg font-mono text-lg tracking-widest" readonly>
+                                            </div>
+                                            <div>
+                                                <label class="block text-xs font-bold text-gray-400 mb-2 uppercase">Tên chủ thẻ</label>
+                                                <input type="text" value="NGUYEN VAN A" class="w-full p-3 border-2 border-gray-100 rounded-lg font-bold" readonly>
+                                            </div>
+                                            <div>
+                                                <label class="block text-xs font-bold text-gray-400 mb-2 uppercase">Ngày phát hành</label>
+                                                <input type="text" value="07/15" class="w-full p-3 border-2 border-gray-100 rounded-lg font-bold" readonly>
+                                            </div>
+                                        </div>
+                                        <button onclick="nextStep('vnpay-step-1', 'vnpay-step-2')" class="w-full bg-brand text-white py-4 rounded-xl font-bold shadow-lg hover:opacity-90 transition-all">XÁC THỰC THẺ</button>
+                                    </div>
+
+                                    <div id="vnpay-step-2" class="hidden space-y-6 text-center py-10">
+                                        <i class="fas fa-shield-alt text-5xl text-blue-500 mb-4"></i>
+                                        <h3 class="text-xl font-bold">Nhập mã xác thực (OTP)</h3>
+                                        <p class="text-gray-500">Mã OTP đã được gửi đến số điện thoại đăng ký thẻ nội địa.</p>
+                                        <div class="flex justify-center gap-3">
+                                            @for(int i=0; i<6; i++){ <input type="text" value="@(i+1)" class="w-12 h-14 border-2 border-gray-200 rounded-xl text-center text-2xl font-bold" readonly> }
+                                        </div>
+                                        <div id="loading-bar" class="hidden mt-6">
+                                            <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                                                <div id="progress" class="bg-blue-600 h-full progress-bar" style="width: 0%"></div>
+                                            </div>
+                                            <p class="text-[10px] mt-2 font-bold text-blue-600 animate-pulse uppercase">Đang đối soát dữ liệu giao dịch...</p>
+                                        </div>
+                                        <button id="final-btn" onclick="startLoading()" class="w-full bg-orange-500 text-white py-4 rounded-xl font-bold shadow-lg">XÁC NHẬN THANH TOÁN</button>
+                                    </div>
+                                } else {
+                                    <div id="paypal-login" class="max-w-sm mx-auto space-y-6">
+                                        <h2 class="text-2xl font-light text-center">Pay with <span class="text-blue-600 font-bold">PayPal</span></h2>
+                                        <input type="email" placeholder="Email or mobile number" class="w-full p-3 border border-gray-300 rounded outline-none focus:border-blue-500" value="customer_test@example.com" readonly>
+                                        <input type="password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded outline-none" value="********" readonly>
+                                        <button onclick="startLoading('paypal')" class="w-full bg-[#0070ba] text-white py-3 rounded-full font-bold hover:bg-[#003087] transition-all">Log In</button>
+                                        <div class="relative flex items-center">
+                                            <div class="flex-grow border-t border-gray-300"></div>
+                                            <span class="flex-shrink mx-4 text-gray-400 text-sm">or</span>
+                                            <div class="flex-grow border-t border-gray-300"></div>
+                                        </div>
+                                        <button class="w-full border border-gray-300 py-3 rounded-full font-bold text-gray-700">Pay with Debit or Credit Card</button>
+                                    </div>
+                                    <div id="paypal-processing" class="hidden text-center py-20">
+                                        <div class="inline-block w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                                        <p class="mt-4 font-bold text-blue-900">Processing your transaction...</p>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    } else {
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+                            <div class="flex flex-col md:flex-row gap-10 items-center">
+                                <div class="w-full md:w-1/2 text-center space-y-4">
+                                    <h3 class="text-lg font-bold text-gray-700">Quét mã để thanh toán</h3>
+                                    <div class="relative p-4 border-2 border-gray-100 rounded-2xl bg-white shadow-inner inline-block">
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=@method-@Model.Id" class="w-56 h-56">
+                                        <div class="absolute inset-0 border-2 border-brand rounded-2xl pointer-events-none opacity-20"></div>
+                                    </div>
+                                    <p class="text-xs text-gray-400">Sử dụng ứng dụng <span class="font-bold text-brand">@method</span> để quét mã QR</p>
+                                </div>
+                                <div class="w-full md:w-1/2 space-y-6 border-l pl-0 md:pl-10">
+                                    <div class="space-y-2">
+                                        <h4 class="font-bold text-gray-600">Hướng dẫn thanh toán</h4>
+                                        <ul class="text-sm text-gray-500 space-y-3">
+                                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Mở ứng dụng @method trên điện thoại</li>
+                                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Chọn biểu tượng <b>Quét mã</b></li>
+                                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Quét mã QR ở bên cạnh và xác nhận</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-xl border-l-4 border-brand">
+                                        <p class="text-xs text-gray-400 font-bold mb-1">TRẠNG THÁI GIAO DỊCH</p>
+                                        <p class="text-sm italic animate-pulse" id="scan-status">Đang chờ quét mã...</p>
+                                    </div>
+                                    <button onclick="startLoading('mobile')" class="w-full bg-brand text-white py-4 rounded-xl font-bold shadow-lg active:scale-95 transition-all">GIẢ LẬP ĐÃ QUÉT MÃ</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <p class="text-center text-gray-400 text-xs mt-6">
+                        <i class="fas fa-lock mr-1"></i> Thông tin thanh toán được bảo mật bởi tiêu chuẩn PCI DSS
+                    </p>
+                </div>
+
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sticky top-8">
+                        <h3 class="font-bold text-gray-800 mb-4 border-b pb-2">Thông tin đơn hàng</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Mã đơn hàng:</span>
+                                <span class="font-bold">#@Model.Id</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Khách hàng:</span>
+                                <span class="font-bold">@Model.CustomerName</span>
+                            </div>
+                            <div class="border-t pt-4">
+                                <div class="flex justify-between items-end mb-2">
+                                    <span class="text-gray-500 text-sm">Tổng thanh toán:</span>
+                                    <span class="text-2xl font-black text-brand">@Model.TotalAmount.ToString("N0") <small class="text-xs font-normal">VND</small></span>
+                                </div>
+                                @if(method == "PayPal") {
+                                    <div class="text-right text-xs text-blue-600 font-bold">~ $@usdAmount USD</div>
+                                }
+                            </div>
+                            <button onclick="window.location.href='/Order/History'" class="w-full mt-4 py-2 text-gray-400 text-sm font-bold border rounded-lg hover:bg-gray-50 transition-all">HỦY GIAO DỊCH</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function nextStep(current, next) {
+            document.getElementById(current).classList.add('hidden');
+            document.getElementById(next).classList.remove('hidden');
+        }
+
+        function startLoading(type) {
+            if(type === 'paypal') {
+                document.getElementById('paypal-login').classList.add('hidden');
+                document.getElementById('paypal-processing').classList.remove('hidden');
+                setTimeout(() => document.getElementById('confirmForm').submit(), 2500);
+            } 
+            else if (type === 'mobile') {
+                document.getElementById('scan-status').innerHTML = "<b>ĐÃ QUÉT MÃ!</b> Đang xác thực vân tay...";
+                document.getElementById('scan-status').classList.add('text-green-600');
+                setTimeout(() => document.getElementById('confirmForm').submit(), 2000);
+            }
+            else {
+                document.getElementById('loading-bar').classList.remove('hidden');
+                document.getElementById('final-btn').classList.add('hidden');
+                let p = 0;
+                let inv = setInterval(() => {
+                    p += 5;
+                    document.getElementById('progress').style.width = p + '%';
+                    if(p >= 100) { 
+                        clearInterval(inv); 
+                        document.getElementById('confirmForm').submit();
+                    }
+                }, 100);
+            }
+        }
+
+        // Timer
+        // Tìm đoạn này và sửa số 899 thành 30
+        let time = 30; 
+
+        setInterval(() => {
+            const el = document.getElementById('timer');
+            if(el) {
+                let m = Math.floor(time/60);
+                let s = time % 60;
+                el.innerText = `${m}:${s < 10 ? '0' + s : s}`;
+        
+                if(time > 0) {
+                    time--;
+                } else {
+                    // KHI HẾT 30 GIÂY: Tự động chuyển hướng về trang chủ hoặc báo hủy
+                    alert("Giao dịch đã hết hạn!");
+                    window.location.href = '/Order/History'; // Hoặc trang bạn muốn
+                }
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

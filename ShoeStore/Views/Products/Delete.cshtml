@@ -1,0 +1,45 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Xóa sản phẩm";
+}
+
+<div class="container-lg mt-4 mb-5">
+    <div class="d-flex align-items-center gap-3 mb-4">
+        <a asp-action="Index" class="btn btn-outline-secondary btn-sm">← Quay lại</a>
+        <h4 class="mb-0 fw-semibold text-danger">Xóa sản phẩm</h4>
+    </div>
+
+    <div class="card shadow-sm border-danger" style="max-width:500px;">
+        <div class="card-header bg-danger text-white fw-semibold py-3">
+            Xác nhận xóa
+        </div>
+        <div class="card-body p-4">
+            <div class="d-flex gap-3 align-items-start mb-3">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="/images/products/@Model.ImageUrl" width="80" height="80"
+                         style="object-fit:cover; border-radius:8px;" class="border" />
+                }
+                <div>
+                    <h5 class="fw-bold mb-1">@Model.Name</h5>
+                    <div class="text-danger fw-semibold">@Model.Price.ToString("N0") đ</div>
+                    <div class="text-muted small mt-1">@Model.Description</div>
+                    <div class="mt-1 small">Danh mục: <strong>@(Model.Category?.Name ?? "—")</strong></div>
+                </div>
+            </div>
+
+            <div class="alert alert-warning py-2 small">
+                ⚠️ Hành động này không thể hoàn tác. Tất cả tùy chọn liên quan cũng sẽ bị xóa.
+            </div>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-danger px-4">Xác nhận xóa</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">Hủy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

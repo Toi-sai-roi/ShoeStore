@@ -1,0 +1,70 @@
+﻿@model List<ShoeStore.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Giỏ hàng";
+}
+
+<h2>🛒 Giỏ hàng của bạn</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <div class="alert alert-info" style="color: #FF0000">Giỏ hàng trống. <a href="/" style="text-decoration: none">Tiếp tục mua sắm</a>
+
+    </div>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Size</th>
+                <th>Màu</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.ImageUrl))
+                        {
+                            <img src="/images/products/@item.ImageUrl" width="50" class="me-2" />
+                        }
+                        @item.ProductName
+                    </td>
+                    <td>@item.Size</td>
+                    <td>@item.Color</td>
+                    <td>@item.UnitPrice.ToString("N0") đ</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.SubTotal.ToString("N0") đ</td>
+                    <td>
+                        <form asp-action="Remove" asp-controller="Cart" method="post">
+                            <input type="hidden" name="variantId" value="@item.VariantId" />
+                            <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-end fw-bold">Tổng cộng:</td>
+                <td colspan="2" class="fw-bold text-danger">
+                    @Model.Sum(i => i.SubTotal).ToString("N0") đ
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="d-flex gap-2">
+        <form asp-action="Clear" asp-controller="Cart" method="post">
+            <button type="submit" class="btn btn-secondary">Xóa tất cả</button>
+        </form>
+        <a href="/Order/Checkout" class="btn btn-success">Đặt hàng →</a>
+    </div>
+}

@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Thêm Variant";
+}
+
+<div class="container mt-4">
+    <h4>Thêm Variant mới</h4>
+    <form asp-action="Create" asp-controller="Variant" method="post">
+        <input type="hidden" name="ProductId" value="@ViewBag.ProductId" />
+        <div class="mb-3">
+            <label class="form-label">Size</label>
+            <input type="text" name="Size" class="form-control" placeholder="VD: 39, 40, 41..." required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Màu sắc</label>
+            <input type="text" name="Color" class="form-control" placeholder="VD: Đen, Trắng..." required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Số lượng tồn kho</label>
+            <input type="number" name="Stock" class="form-control" value="0" min="0" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Lưu</button>
+        <a href="/Variant/Manage?productId=@ViewBag.ProductId" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>

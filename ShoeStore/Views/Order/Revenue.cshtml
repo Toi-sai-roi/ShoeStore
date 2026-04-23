@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Thống kê doanh thu";
+}
+
+<div class="container mt-4">
+    <h3>Thống kê doanh thu</h3>
+    <hr />
+
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card text-white bg-success shadow">
+                <div class="card-body">
+                    <h6 class="card-title">Tổng doanh thu</h6>
+                    <h3>@((ViewBag.TotalRevenue as decimal?)?.ToString("N0")) VNĐ</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-primary shadow">
+                <div class="card-body">
+                    <h6 class="card-title">Đơn đã giao</h6>
+                    <h3>@ViewBag.TotalOrders</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5>Top 5 sản phẩm bán chạy</h5>
+    <table class="table table-bordered">
+        <thead class="table-dark text-black">
+            <tr>
+                <th>#</th>
+                <th>Sản phẩm</th>
+                <th>Số lượng bán</th>
+                <th>Doanh thu</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var top = ViewBag.TopProducts as IEnumerable<dynamic>;
+                int rank = 1;
+            }
+            @foreach (var p in top!)
+            {
+                <tr>
+                    <td>@(rank++)</td>
+                    <td>@p.Name</td>
+                    <td>@p.Quantity</td>
+                    <td>@((p.Revenue as decimal?)?.ToString("N0")) VNĐ</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

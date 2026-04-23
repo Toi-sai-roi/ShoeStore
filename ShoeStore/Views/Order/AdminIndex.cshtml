@@ -1,0 +1,92 @@
+﻿@model IEnumerable<ShoeStore.Models.Order>
+
+<div class="container mt-4">
+    <h3 class="fw-bold"><i class="fas fa-boxes me-2"></i>Quản lý đơn hàng</h3>
+    <hr />
+
+    <form method="get" asp-action="AdminIndex" class="mb-4 bg-light p-3 rounded shadow-sm">
+        <div class="row g-2">
+            <div class="col-md-4">
+                <input type="text" name="search" class="form-control" placeholder="Tìm tên khách, email..." value="@ViewBag.Search" />
+            </div>
+            <div class="col-md-3">
+                <select name="status" class="form-select">
+                    <option value="">-- Tất cả trạng thái --</option>
+                    <option value="Pending" selected="@(ViewBag.Status == "Pending")">Pending</option>
+                    <option value="Confirmed" selected="@(ViewBag.Status == "Confirmed")">Confirmed</option>
+                    <option value="Delivering" selected="@(ViewBag.Status == "Delivering")">Delivering</option>
+                    <option value="Delivered" selected="@(ViewBag.Status == "Delivered")">Delivered</option>
+                    <option value="Cancelled" selected="@(ViewBag.Status == "Cancelled")">Cancelled</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary w-100" type="submit">Lọc dữ liệu</button>
+            </div>
+            <div class="col-md-2">
+                <a class="btn btn-outline-secondary w-100" asp-action="AdminIndex">Làm mới</a>
+            </div>
+        </div>
+    </form>
+
+    <table class="table table-hover align-middle border">
+        <thead class="table-dark text-black">
+            <tr>
+                <th>#</th>
+                <th>Khách hàng</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th>Thời gian</th>
+                <th width="250">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var o in Model)
+            {
+                <tr>
+                    <td class="fw-bold">@o.Id</td>
+                    <td>
+                        <div class="fw-bold">@o.CustomerName</div>
+                        <small class="text-muted">@o.User?.Email</small>
+                    </td>
+                    <td class="text-primary fw-bold">@o.TotalAmount.ToString("N0") đ</td>
+                    <td>
+                        <span class="badge @(o.Status == "Delivered" ? "bg-success" :
+                                                                                                       o.Status == "Cancelled" ? "bg-danger" :
+                                                                                                       o.Status == "Delivering" ? "bg-info text-dark" :
+                                                                                                       o.Status == "Confirmed" ? "bg-primary" : "bg-warning text-dark")">
+                            @o.Status
+                        </span>
+                    </td>
+                    <td>
+                        <div class="small">@o.CreatedAt.ToString("HH:mm:ss")</div>
+                        <div class="text-[10px] text-muted">@o.CreatedAt.ToString("dd/MM/yyyy")</div>
+                    </td>
+                    <td>
+                        <form asp-action="UpdateStatus" method="post" class="input-group input-group-sm">
+                            <input type="hidden" name="orderId" value="@o.Id" />
+                            <select name="status" class="form-select">
+                                <option value="Pending" selected="@(o.Status == "Pending")">Pending</option>
+                                <option value="Confirmed" selected="@(o.Status == "Confirmed")">Confirmed</option>
+                                <option value="Delivering" selected="@(o.Status == "Delivering")">Delivering</option>
+                                <option value="Delivered" selected="@(o.Status == "Delivered")">Delivered</option>
+                                <option value="Cancelled" selected="@(o.Status == "Cancelled")">Cancelled</option>
+                            </select>
+                            <button type="submit" class="btn btn-dark">Lưu</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Tự động load lại trang sau mỗi 10 giây để demo nhảy trạng thái
+    // Chỉ reload nếu Admin không mở menu select (để tránh bị ngắt quãng khi đang chọn)
+    setInterval(function() {
+        if (document.activeElement.tagName !== 'SELECT') {
+            location.reload();
+        }
+    }, 10000);
+    
+</script>

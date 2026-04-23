@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/site-user/images/favicon.png">
+    <title>@ViewData["Title"] - ShoeStore</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">ShoeStore</a>
+
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link " asp-controller="Home" asp-action="Index">🏠 Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-controller="Cart" asp-action="Index">🛒 Giỏ hàng</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
+
+                        @if (new[] { "Admin", "Staff" }.Contains(Context.Session.GetString("UserRole")))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-danger" href="#"
+                                   data-bs-toggle="dropdown">⚙️ Quản lý</a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    @if (Context.Session.GetString("UserRole") == "Admin")
+                                    {
+                                        <li>
+                                            <a class="dropdown-item" asp-controller="Admin" asp-action="Users">
+                                                👥 Quản lý User
+                                            </a>
+                                        </li>
+                                        <li><hr class="dropdown-divider"></li>
+                                    }
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Products" asp-action="Index">
+                                            👟 Quản lý sản phẩm
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Order" asp-action="AdminIndex">
+                                            📋 Quản lý đơn
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Order" asp-action="Revenue">
+                                            📊 Doanh thu
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+
+                        @if (Context.Session.GetString("UserEmail") != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-controller="Order" asp-action="History">📦 Đơn hàng</a>
+                            </li>
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
+                                    👤 @Context.Session.GetString("UserEmail")
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end ">
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Account" asp-action="Profile">
+                                            Hồ sơ
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <a class="dropdown-item text-danger" asp-controller="Account" asp-action="Logout">
+                                            Đăng xuất
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-controller="Account" asp-action="Login">🔑 Đăng nhập</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " asp-controller="Account" asp-action="Register">✨ Đăng ký</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top mt-5 py-3 text-center text-muted">
+        <div class="container">
+            &copy; 2026 - ShoeStore
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
