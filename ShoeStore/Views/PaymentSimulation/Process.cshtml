@@ -4,8 +4,7 @@
     var method = ViewBag.Method as string;
     var usdAmount = Math.Round(Model.TotalAmount / 25000, 2);
     
-    // Cấu hình màu sắc theo thương hiệu
-    var brandColor = "#ae2070"; // MoMo
+    var brandColor = "#ae2070"; 
     if(method == "ZaloPay") brandColor = "#0081cf"; 
     if(method == "VNPay") brandColor = "#005baa";
     if(method == "PayPal") brandColor = "#003087";
@@ -42,7 +41,7 @@
                 </div>
                 <div class="text-right">
                     <p class="text-[10px] text-gray-400 font-bold uppercase">Giao dịch hết hạn sau</p>
-                    <p class="text-red-600 font-mono font-bold" id="timer">14:59</p>
+                    <p class="text-red-600 font-mono font-bold" id="timer">00:30</p>
                 </div>
             </div>
         </header>
@@ -223,22 +222,21 @@
         }
 
         // Timer
-        // Tìm đoạn này và sửa số 899 thành 30
-        let time = 30; 
+        let time = 30;
 
-        setInterval(() => {
+        let timer = setInterval(() => {
             const el = document.getElementById('timer');
             if(el) {
                 let m = Math.floor(time/60);
                 let s = time % 60;
                 el.innerText = `${m}:${s < 10 ? '0' + s : s}`;
-        
+
                 if(time > 0) {
                     time--;
                 } else {
-                    // KHI HẾT 30 GIÂY: Tự động chuyển hướng về trang chủ hoặc báo hủy
+                    clearInterval(timer); // Dừng interval
                     alert("Giao dịch đã hết hạn!");
-                    window.location.href = '/Order/History'; // Hoặc trang bạn muốn
+                    window.location.href = '/Order/History';
                 }
             }
         }, 1000);
