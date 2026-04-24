@@ -5,7 +5,7 @@ using ShoeStore.Models;
 
 namespace ShoeStore.Controllers
 {
-    public class OrderController : Controller
+    public class OrderController : BaseController
     {
         private readonly ApplicationDbContext _db;
         private readonly IConfiguration _config;
@@ -16,16 +16,10 @@ namespace ShoeStore.Controllers
             _config = config;
         }
 
-        private bool IsAdmin() => HttpContext.Session.GetString("UserRole") == "Admin";
-        private bool IsAdminOrStaff() => IsAdmin() || HttpContext.Session.GetString("UserRole") == "Staff";
-
-        // ================= USER FUNCTIONS =================
-
-
         [HttpGet]
         public IActionResult Checkout()
         {
-            var userId = HttpContext.Session.GetInt32("UserId");
+            var userId = CurrentUserId;
             if (userId == null) return RedirectToAction("Login", "Account");
 
             var cart = _db.CartItems
@@ -46,7 +40,7 @@ namespace ShoeStore.Controllers
         [HttpPost]
         public IActionResult Checkout(string customerName, string? customerPhone, string? customerAddress, string paymentMethod = "COD")
         {
-            var userId = HttpContext.Session.GetInt32("UserId");
+            var userId = CurrentUserId;
             if (userId == null) return RedirectToAction("Login", "Account");
 
             var cart = _db.CartItems
@@ -59,7 +53,6 @@ namespace ShoeStore.Controllers
 
             try
             {
-                // TÍNH TỔNG TIỀN TRỰC TIẾP (Fix lỗi bằng 0)
                 decimal total = cart.Sum(i => i.Quantity * i.UnitPrice);
 
                 var order = new Order
@@ -71,7 +64,6 @@ namespace ShoeStore.Controllers
                     PaymentMethod = paymentMethod,
                     TotalAmount = total,
                     CreatedAt = DateTime.Now,
-                    // Nếu Online thì chờ thanh toán (Pending), nếu COD thì duyệt luôn (Confirmed)
                     Status = (paymentMethod == "COD") ? "Confirmed" : "Pending"
                 };
 
@@ -86,14 +78,12 @@ namespace ShoeStore.Controllers
                 }
 
                 _db.Orders.Add(order);
-                _db.CartItems.RemoveRange(cart); // Dọn giỏ hàng
+                _db.CartItems.RemoveRange(cart);
                 _db.SaveChanges();
 
                 var onlineMethods = new List<string> { "MoMo", "ZaloPay", "VNPay", "PayPal" };
                 if (onlineMethods.Contains(paymentMethod))
-                {
                     return RedirectToAction("Process", "PaymentSimulation", new { orderId = order.Id, method = paymentMethod });
-                }
 
                 return RedirectToAction("Success", new { id = order.Id });
             }
@@ -112,7 +102,7 @@ namespace ShoeStore.Controllers
 
         public IActionResult History()
         {
-            var userId = HttpContext.Session.GetInt32("UserId");
+            var userId = CurrentUserId;
             if (userId == null) return RedirectToAction("Login", "Account");
 
             var orders = _db.Orders
@@ -122,7 +112,7 @@ namespace ShoeStore.Controllers
                 .ThenInclude(v => v!.Product)
                 .OrderByDescending(o => o.CreatedAt)
                 .ToList();
-            // Logic lừa thị giác cho User (không save vào DB để demo liên tục được)
+
             foreach (var order in orders)
             {
                 var secondsSinceCreated = (DateTime.Now - order.CreatedAt).TotalSeconds;
@@ -134,20 +124,15 @@ namespace ShoeStore.Controllers
                 }
 
                 if (order.Status == "Pending" && secondsSinceCreated >= 30)
-                {
                     order.Status = "Cancelled";
-                }
             }
 
             return View(orders);
         }
 
-        // ================= ADMIN FUNCTIONS =================
-
+        [AdminOrStaff]
         public IActionResult AdminIndex(string? search, string? status)
         {
-            if (!IsAdminOrStaff()) return RedirectToAction("Index", "Home");
-
             var query = _db.Orders.Include(o => o.User).AsQueryable();
 
             if (!string.IsNullOrEmpty(search))
@@ -185,25 +170,22 @@ namespace ShoeStore.Controllers
         }
 
         [HttpPost]
+        [AdminOrStaff]
         public IActionResult UpdateStatus(int orderId, string status)
         {
-            if (!IsAdminOrStaff()) return Forbid();
-
             var order = _db.Orders.Find(orderId);
             if (order != null)
             {
                 order.Status = status;
-                // Reset thời gian để Admin có 30s "yên tĩnh" quan sát trạng thái vừa chọn
                 order.CreatedAt = DateTime.Now;
                 _db.SaveChanges();
             }
             return RedirectToAction("AdminIndex");
         }
 
+        [AdminOrStaff]
         public IActionResult Revenue()
         {
-            if (!IsAdminOrStaff()) return RedirectToAction("Index", "Home");
-
             var orders = _db.Orders
                             .Where(o => o.Status == "Delivered" || o.Status == "Confirmed")
                             .Include(o => o.OrderDetails)

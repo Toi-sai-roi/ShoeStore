@@ -1,26 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShoeStore.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http;
 
 namespace ShoeStore.Controllers
 {
-    public class AdminController : Controller
+    [AdminOnly]
+    public class AdminController : BaseController
     {
         private readonly ApplicationDbContext _db;
         public AdminController(ApplicationDbContext db) => _db = db;
 
         private const string RootEmail = "admin@shop.com";
-        private bool IsAdmin() => HttpContext.Session.GetString("UserRole") == "Admin";
-        private bool IsRootAdmin() => HttpContext.Session.GetString("UserEmail") == RootEmail; 
+        private bool IsRootAdmin() => HttpContext.Session.GetString("UserEmail") == RootEmail;
 
         public async Task<IActionResult> Users()
         {
-            if (!IsAdmin()) return RedirectToAction("Login", "Account");
-
-            // Gửi RootEmail sang View để ẩn/hiện nút cho chuẩn
             ViewBag.RootEmail = RootEmail;
-
             var users = await _db.Users.OrderBy(u => u.Role).ThenBy(u => u.FullName).ToListAsync();
             return View(users);
         }
@@ -28,11 +23,7 @@ namespace ShoeStore.Controllers
         [HttpPost]
         public async Task<IActionResult> ChangeRole(int userId, string newRole)
         {
-            // Bảo mật tầng 1: Phải là Admin
-            if (!IsAdmin()) return RedirectToAction("Login", "Account");
-
-            // Bảo mật tầng 2: Chỉ thằng ID = 1 mới được quyền đổi
-            if (!IsRootAdmin()) // Kiểm tra bằng Email ở hàm trên
+            if (!IsRootAdmin())
             {
                 TempData["Error"] = "Bạn không có quyền này!";
                 return RedirectToAction("Users");
@@ -41,14 +32,12 @@ namespace ShoeStore.Controllers
             var userToChange = await _db.Users.FindAsync(userId);
             if (userToChange == null) return NotFound();
 
-            // Bảo mật tầng 3: Không cho ai đụng vào chính thằng ID 1
             if (userToChange.Email == RootEmail)
             {
                 TempData["Error"] = "Không thể đổi tài khoản Root Admin!";
                 return RedirectToAction("Users");
             }
 
-            // Không cho tự đổi của chính mình
             var currentEmail = HttpContext.Session.GetString("UserEmail");
             if (userToChange.Email == currentEmail)
             {
@@ -83,7 +72,7 @@ namespace ShoeStore.Controllers
             user.IsDeleted = true;
             user.DeletedAt = DateTime.Now;
             await _db.SaveChangesAsync();
-            TempData["Success"] = $"Đã ném {user.FullName} vào thùng rác";
+            TempData["Success"] = $"Đã xóa tài khoản {user.FullName}";
             return RedirectToAction("Users");
         }
 

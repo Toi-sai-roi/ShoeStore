@@ -32,10 +32,11 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
+app.UseStatusCodePagesWithReExecute("/Home/HttpError", "?code={0}");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.Use(async (context, next) => 
+app.Use(async (context, next) =>
 {
     context.Response.Headers["ngrok-skip-browser-warning"] = "true";
     await next();
@@ -43,7 +44,7 @@ app.Use(async (context, next) =>
 app.UseRouting();
 app.UseSession();
 app.UseAuthentication();
-app.UseAuthorization(); 
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",

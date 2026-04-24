@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ShoeStore.Data;
 using ShoeStore.Models;
-using Microsoft.AspNetCore.Authentication.Cookies; 
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 
 namespace ShoeStore.Controllers
@@ -72,6 +72,12 @@ namespace ShoeStore.Controllers
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
                 ViewBag.Error = "Email hoặc mật khẩu không đúng.";
+                return View();
+            }
+
+            if (user.IsDeleted)
+            {
+                ViewBag.Error = "Tài khoản này đã bị vô hiệu hóa. Vui lòng liên hệ quản trị viên.";
                 return View();
             }
 

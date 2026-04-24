@@ -5,14 +5,13 @@ using ShoeStore.Models;
 
 namespace ShoeStore.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ApplicationDbContext _db;
         public HomeController(ApplicationDbContext db) => _db = db;
 
         public IActionResult Index(string? search, int? categoryId, string? sort, int page = 1)
         {
-            // Restore session từ cookie nếu cần
             if (HttpContext.Session.GetInt32("UserId") == null && User.Identity?.IsAuthenticated == true)
             {
                 var userId = User.FindFirst("UserId")?.Value;
@@ -94,18 +93,46 @@ namespace ShoeStore.Controllers
         [HttpPost]
         public IActionResult PostReview(int productId, int rating, string? comment)
         {
-            var userId = HttpContext.Session.GetInt32("UserId");
+            var userId = CurrentUserId;
             if (userId == null) return RedirectToAction("Login", "Account");
+
+            if (rating < 1 || rating > 5)
+            {
+                TempData["ReviewError"] = "Đánh giá phải từ 1 đến 5 sao.";
+                return RedirectToAction("Details", new { id = productId });
+            }
+
+            if (!string.IsNullOrWhiteSpace(comment) && comment.Length > 500)
+            {
+                TempData["ReviewError"] = "Nhận xét không được vượt quá 500 ký tự.";
+                return RedirectToAction("Details", new { id = productId });
+            }
+
+            var productExists = _db.Products.Any(p => p.Id == productId);
+            if (!productExists) return NotFound();
 
             _db.Reviews.Add(new Review
             {
                 UserId = userId.Value,
                 ProductId = productId,
                 Rating = rating,
-                Comment = comment
+                Comment = string.IsNullOrWhiteSpace(comment) ? null : comment.Trim()
             });
             _db.SaveChanges();
+
+            TempData["ReviewSuccess"] = "Cảm ơn bạn đã đánh giá!";
             return RedirectToAction("Details", new { id = productId });
+        }
+
+        public IActionResult Error()
+        {
+            return View();
+        }
+
+        public IActionResult HttpError(int code)
+        {
+            ViewBag.StatusCode = code;
+            return View();
         }
     }
 }

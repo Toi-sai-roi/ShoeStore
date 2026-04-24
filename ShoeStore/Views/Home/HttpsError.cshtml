@@ -1,0 +1,28 @@
+﻿@{
+    int code = ViewBag.StatusCode ?? 0;
+    string title = code switch
+    {
+        404 => "Không tìm thấy trang",
+        403 => "Không có quyền truy cập",
+        401 => "Vui lòng đăng nhập",
+        _ => "Đã xảy ra lỗi"
+    };
+    string message = code switch
+    {
+        404 => "Trang bạn tìm kiếm không tồn tại hoặc đã bị xóa.",
+        403 => "Bạn không có quyền truy cập vào trang này.",
+        401 => "Bạn cần đăng nhập để xem nội dung này.",
+        _ => "Máy chủ gặp sự cố. Vui lòng thử lại sau."
+    };
+    ViewData["Title"] = $"Lỗi {code}";
+}
+
+<div class="container py-5 text-center" style="min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <div style="font-size: 6rem; font-weight: 700; color: #dee2e6; line-height: 1;">@code</div>
+    <h2 class="mt-2 mb-3">@title</h2>
+    <p class="text-muted mb-4">@message</p>
+    <div class="d-flex gap-2 justify-content-center">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-dark px-4">Về trang chủ</a>
+        <a href="javascript:history.back()" class="btn btn-outline-secondary px-4">Quay lại</a>
+    </div>
+</div>
