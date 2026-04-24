@@ -96,6 +96,9 @@ namespace ShoeStore.Controllers
             var userId = CurrentUserId;
             if (userId == null) return RedirectToAction("Login", "Account");
 
+            var userExists = _db.Users.Any(u => u.Id == userId);
+            if (!userExists) return RedirectToAction("Login", "Account");
+
             if (rating < 1 || rating > 5)
             {
                 TempData["ReviewError"] = "Đánh giá phải từ 1 đến 5 sao.";

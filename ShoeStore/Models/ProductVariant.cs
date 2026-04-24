@@ -10,10 +10,10 @@ namespace ShoeStore.Models
         public Product? Product { get; set; }
 
         [Required]
-        public string Size { get; set; } = "";   // "39", "40", "41"...
+        public string Size { get; set; } = "";  
 
         [Required]
-        public string Color { get; set; } = "";  // "Đen", "Trắng"...
+        public string Color { get; set; } = ""; 
 
         public int Stock { get; set; } = 0;
     }
